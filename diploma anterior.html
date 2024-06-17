@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            box-sizing: border-box;
+            background-color: #555555;
+        }
+        .diploma-container {
+            width: 900px;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+        }
+        .diploma {
+            padding-top: 30px;
+            background-color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .cabezera .color {
+            margin-top: 40PX;
+            width: 100%;
+            height: 40px;
+            position: relative;
+            border-top:10PX solid #061f46;
+            border-bottom:10PX solid #061f46; 
+        }
+        .piedepagina {
+            width: 100%;
+            display: flex;
+            padding-bottom: 20px;
+        }
+        .color {
+            width: 90px;
+            height: 10px;
+        }
+        .color1 { background-color: #2ba3d3; }
+        .color2 { background-color: #061f46; }
+        .color3 { background-color: #317ace; }
+        .color4 { background-color: #ffd903; }
+        .color5 { background-color: #306b92; }
+        .title {
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: #2ba3d3;
+        }
+        .subtitle {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #717479;
+        }
+        .graduado {
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: black;
+        }
+        .motivo {
+            font-size: 1em;
+            margin-top: 30px;
+            color: #717479;
+        }
+        .sentimiento {
+            margin-top: 0px;
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-style: none;
+            color: #2ba3d3;
+            font-style: italic;
+        }
+        .fechaDe {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            font-size: 20px;
+            color: #717479;
+        }
+        .input-field i {
+            color: #ffd416;
+            position: absolute;
+            top: 4.5%;
+            left: 45.3%;
+            z-index: 11;
+            font-size: 85px;
+        }
+        .circle {
+            margin-top: 5px;
+            width: 100px;
+            height: 100px;
+            background-color: #2ba3d3;
+            border-radius: 50%;
+            border: 10PX solid #061f46;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10; /* Asegura que el círculo esté en el frente */
+        }
+    </style>
+</head>
+<body>
+    <div class="diploma-container">
+        <div class="input-field">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="circle"></div>
+        <div class="cabezera">
+            <div class="color color1"></div>
+        </div>
+        <div class="diploma">
+            <h1 class="title">Ackermann Institute</h1>
+            <p class="subtitle">Presented to:</p>
+            <h2 class="graduado" id="nombreGraduado"></h2>
+            <p class="motivo">For:</p>
+            <p class="sentimiento" id="sentimiento"></p>
+            <div class="fechaDe">
+                <p class="fecha" id="fechaAqui"></p>
+            </div>
+        </div>
+        <div class="piedepagina">
+            <div class="color color1"></div>
+            <div class="color color2"></div>
+            <div class="color color3"></div>
+            <div class="color color4"></div>
+            <div class="color color5"></div>
+            <div class="color color1"></div>
+            <div class="color color2"></div>
+            <div class="color color3"></div>
+            <div class="color color4"></div>
+            <div class="color color5"></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nombre = localStorage.getItem('nombre');
+            const apellido = localStorage.getItem('apellido');
+            const sentimiento = localStorage.getItem('sentimiento');
+            const fecha = localStorage.getItem('fecha');
+            document.getElementById('nombreGraduado').textContent = nombre + ' ' + apellido;
+            document.getElementById('fechaAqui').textContent = fecha;
+            document.getElementById('sentimiento').textContent = sentimiento;
+        });
+    </script>
+</body>
+</html>
